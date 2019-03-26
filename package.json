@@ -1,0 +1,13 @@
+{
+  "name": "lorem-picsum",
+  "version": "1.0.0",
+  "repository": {
+    "type": "GitHub",
+    "url": "https://github.com/jpsheehan/lorem-picsum"
+  },
+  "description": "A wrapper for https://picsum.photos/",
+  "main": "index.js",
+  "author": "JP Sheehan",
+  "license": "GPL-3.0-only",
+  "devDependencies": {}
+}
