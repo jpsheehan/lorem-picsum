@@ -18,5 +18,5 @@ console.log(loremPicsum({ width: 200, height: 300, image: 0 }));
 // blurred image
 console.log(loremPicsum({ width: 200, height: 300, blur: true }));
 
-// crop gravity
-console.log(loremPicsum({ width: 200, height: 300, gravity: "east" }));
+// seeded image
+console.log(loremPicsum({ width: 200, height: 300, seed: "testSeed"}));
