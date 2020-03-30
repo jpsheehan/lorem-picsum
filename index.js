@@ -34,9 +34,9 @@ function buildPathString(pathParts) {
  * - `grayscale` (boolean)
  * - `random` (boolean)
  * - `blur` (boolean)
- * - `gravity` (string, one of "east", "north", "south", "west" or "center")
+ * - `seed` (string)
  *
- * Note: `random` is ignored if `image` is supplied.
+ * Note: `random` and `seed` are ignored if `image` is supplied and `random` is ignored if `seed` is supplied.
  *
  * @param {object} opts The options describing the image.
  * @returns {string} Returns the url to the image.
@@ -53,10 +53,12 @@ function loremPicsum(opts) {
     throw new Error("opts.width must be a number");
   }
 
-  if (opts.grayscale) {
-    path.push("g");
-  }
-
+    // seed - ignored if image id set
+    if (opts.seed && typeof opts.image === 'undefined') {
+      path.push("seed");
+      path.push(opts.seed);
+    }
+  
   path.push(opts.width.toString());
 
   if (opts.height) {
@@ -77,9 +79,9 @@ function loremPicsum(opts) {
   if (opts.blur) {
     query.blur = "";
   }
-
-  if (opts.gravity) {
-    query.gravity = opts.gravity;
+  
+  if (opts.grayscale) {
+    query.grayscale = "";
   }
 
   // return the url
